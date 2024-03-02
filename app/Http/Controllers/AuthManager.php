@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthManager extends Controller
 {
@@ -43,5 +44,12 @@ class AuthManager extends Controller
         if(!$user) {
             return redirect(route('registration'))->with("error", "Registration failed, try again.");
         }
-        return redirect(route('login'))->with("success", "Registration success, login to access the application");    }
+        return redirect(route('login'))->with("success", "Registration success, login to access the application");    
+    }
+
+    function logout() {
+        Session::flush();
+        Auth::logout();
+        return redirect(route('login'));
+    }
 }

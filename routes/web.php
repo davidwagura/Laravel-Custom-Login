@@ -26,3 +26,5 @@ Route::post('/login', [AuthManager::class, 'loginpost'])->name('login.post');
 Route::get('/registration', [AuthManager::class, 'registration'])->name('registration');
 
 Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
+
+Route::post('/loginout', [AuthManager::class, 'logout'])->name('logout');
