@@ -2,7 +2,7 @@
 @section('title', 'login')
 @section('content')
     <div class="container">
-        <form style="width: 500px">
+        <form class="ms-auto me-auto mt-auto" style="width: 500px">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
